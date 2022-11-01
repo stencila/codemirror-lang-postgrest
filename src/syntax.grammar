@@ -1,0 +1,44 @@
+
+@top Statement { Keyword* Operator* }
+
+@skip { Space }
+
+@tokens {
+  Keyword {
+    "from" | "FROM" |
+    "select" | "SELECT" |
+    "filter" | "FILTER" | "where" | "WHERE" |
+    "sort" | "SORT" | "order" | "ORDER" |
+    "asc" | "ASC" | "desc" | "DESC" |
+    "nullsfirst" | "NULLSFIRST" | "nullslast" | "NULLSLAST" |
+    
+    "insert" | "INSERT" |
+    "upsert" | "UPSERT" |
+    "columns" | "COLUMNS" |
+    "format" | "FORMAT" |
+    "file" | "FILE" |
+
+    "delete" | "DELETE" |
+    
+    "call" | "CALL"
+  }
+
+  Operator {
+    "and" | "AND" |
+    "or" | "OR" |
+    "not" | "NOT" |
+    "like" | "LIKE" |
+    "ilike" | "ILIKE" |
+    "is" | "IS" |
+    "in" | "IN" |
+
+    "=" | "!=" | "<>" |
+    ">" | ">=" | "<" | "<=" |
+    "~" | "~*" | "@@" | "@>" | "<@" | "&&" |
+    "<<" | ">>" | "&<" | "&>" | "-|-"
+  }
+
+  "(" ")"
+
+  Space { $[ \t\n\r]+ }
+}
